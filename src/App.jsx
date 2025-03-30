@@ -1,5 +1,6 @@
 import iconStar from "./assets/icon-star.svg"
 import { useState } from "react"
+import illustrationThankYou from "./assets/illustration-thank-you.svg"
  
 export function App(){
   const [notaAvaliacao, setNotaAvaliacao] = useState(0)
@@ -18,7 +19,7 @@ export function App(){
 
    return(
     submited === false ? (
-      <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl" >
+      <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl font-overpass" >
       <div className="bg-dark-blue w-fit p-4 rounded-full mb-4 font-overpass"  >
         <img src={iconStar} alt="Icon_Star" />
       </div>
@@ -43,8 +44,13 @@ export function App(){
          
          </div>
         ) :  (
-       <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl" >
-         <p>{notaAvaliacao}</p>
+          <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl font-overpass" >
+          <img className="mx-auto mb-6" src={illustrationThankYou} alt="ThankYou" />
+  
+          <p className="text-center  text-orange bg-dark-blue 
+           px-3 py-1.25 rounded-3xl mb-6 ">You selected {notaAvaliacao} out of 5</p>
+          <h1 className="text-2xl font-bold mb-2.5 text-center "> Thank you! </h1>
+          <p  className="text-medium-grey text-sm mb-6 leading-1 text-center " >We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
          </div>
  
       )
