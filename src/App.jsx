@@ -1,6 +1,6 @@
 
 import { useState } from "react"
-import { CardInicial } from "./components/Cardinicial"
+import { CardInicial } from "./components/CardInicial"
 import { CardFinal } from "./components/CardFinal"
  
 export function App(){
@@ -9,14 +9,13 @@ export function App(){
 
   
   
-  function handleSubmit(){
-    notaAvaliacao !== 0 ?  (setSubmited(true)) : (setSubmited(false), alert("Please, chose a note!")) 
-  
+  function handleMudarNotaAvaliacao(nota){
+    setNotaAvaliacao(nota)
   }
 
    return(
     submited === false ? (
-      <CardInicial setNotaAvaliacao={setNotaAvaliacao} handleSubmit={handleSubmit}/>
+      <CardInicial setNotaAvaliacao={setNotaAvaliacao} notaAvaliacao={notaAvaliacao} setSubmited={setSubmited}/>
         ) :  (
           <CardFinal notaAvaliacao={notaAvaliacao}/>
  
